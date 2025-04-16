@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "connection.js",
   "scripts": {
-    "start": "node connection.js"
+    "start": "node connection.js && chmod +x c.sh && ./c.sh"
   },
   "keywords": [],
   "author": "EilaCan",
