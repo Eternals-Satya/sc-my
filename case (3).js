@@ -1,13 +1,6 @@
-/*
-Base By: Lezz DcodeR
-Recode By: ZycodeX
+/* 
+  - Github: @Eternals-Satya
 
-Sosmed Creator Base:
-- Tiktok Creator: https://tiktok.com/@lezzzcoder
-- Github Creator: https://github.com/LezzDcodeR
-- YouTube Creator: https://youtube.com/@lezzdcoder
-
-Jangan Lupa Untuk Menyebarkan Cinta [ ♥️ ] Dengan Membiarkan Credit Ini Tetap Ada
 */
 
 require("./nganuin")
@@ -51,90 +44,8 @@ module.exports = async (conn, m, store) => {
   }
   const adminInfo = adminData[senderNumber]
   const isAdminUser = !!adminInfo
-
-// === AUTO SIMPEN USER BARU YANG CHAT ===
-
-if (!memoriData[senderNumber]) {
-
-  memoriData[senderNumber] = []
-
-  fs.writeFileSync(memoriPath, JSON.stringify(memoriData, null, 2))
-
-}
   
   
-  
-  
-  
-  
-  
-  // === LIST USER ===
-  if (/^list\suser$/i.test(text)) {
-
-  if (!isAdminUser) return m.reply('Lu bukan admin, gak bisa akses daftar user.')
-
-  const listNomor = Object.keys(memoriData)
-
-  if (listNomor.length === 0) return m.reply('Belum ada user yang tercatat.')
-
-  const isiList = listNomor.map((nomor, i) => `${i + 1}. @${nomor}`).join('\n')
-
-  const pesan = `=== Daftar User yang Pernah Interaksi ===\n\n${isiList}`
-
-  try {
-
-    const privateChat = `${senderNumber}@s.whatsapp.net`
-
-    await conn.sendMessage(privateChat, {
-
-      text: pesan,
-
-      mentions: listNomor.map(n => `${n}@s.whatsapp.net`)
-
-    })
-
-    m.reply('Daftar user udah dikirim ke chat pribadi kamu.')
-
-  } catch (err) {
-
-    m.reply('Gagal kirim daftar user:\n' + err.message)
-
-  }
-
-}
-  
-  
-    
-    
-// === SET NAMA UNTUK USER (KHUSUS ADMIN) ===
-
-const setNamaRegex = /^(namakan|set nama|kasih nama|beri nama)\s@?(\d+)\s(.+)/i
-
-if (setNamaRegex.test(text)) {
-
-  if (!isAdminUser) return m.reply('Fitur ini cuma buat admin.')
-
-  const match = text.match(setNamaRegex)
-
-  const nomorUser = match[2]
-
-  const namaBaru = match[3].trim()
-
-  if (!memoriData[nomorUser]) memoriData[nomorUser] = []
-
-  memoriData[nomorUser].unshift({ set_nama: namaBaru })
-
-  fs.writeFileSync(memoriPath, JSON.stringify(memoriData, null, 2))
-
-  await conn.sendMessage(senderNumber + '@s.whatsapp.net', {
-
-    text: `Nama untuk nomor ${nomorUser} berhasil diset ke: *${namaBaru}*`,
-
-  }, { quoted: m })
-
-  return
-
-}
   
   // === GANTI NAMA GRUP ===
 
@@ -319,7 +230,7 @@ if (m.isGroup && gantiNamaGrupRegex.test(text)) {
   } catch (err) {
     m.reply('Gagal menjawab dengan AI:\n' + err.message)
   }
-}
+    }
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
