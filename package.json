@@ -1,0 +1,34 @@
+{
+  "name": "ZynxZy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node connection.js"
+  },
+  "keywords": [],
+  "author": "ZycodeX",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@google/generative-ai": "^0.24.0",
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "latest",
+    "awesome-phonenumber": "^2.64.0",
+    "axios": "^1.6.8",
+    "baileys": "github:FizzxyTheGreat/baileyss",
+    "chalk": "^4.1.2",
+    "crypto": "^1.0.1",
+    "fluent-ffmpeg": "latest",
+    "human-readable": "^0.2.1",
+    "jimp": "^0.16.1",
+    "moment-timezone": "^0.5.34",
+    "node-webpmux": "^3.1.1",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "pino": "^7.0.5",
+    "stream": "^0.0.3",
+    "util": "^0.12.4"
+  }
+}
