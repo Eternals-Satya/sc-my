@@ -1,15 +1,17 @@
 {
-  "name": "ZynxZy",
+  "name": "Can",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node connection.js"
+    "start": "node server.js"
   },
   "keywords": [],
-  "author": "ZycodeX",
+  "author": "EilaCan",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@google/generative-ai": "^0.24.0",
