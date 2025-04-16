@@ -1,17 +1,15 @@
 {
   "name": "Can",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "connection.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node connection.js"
   },
   "keywords": [],
   "author": "EilaCan",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.18.2",
-    "body-parser": "^1.20.2",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@google/generative-ai": "^0.24.0",
